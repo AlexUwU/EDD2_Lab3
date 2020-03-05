@@ -50,6 +50,13 @@ namespace HuffmanCompresion
             }
         }
 
+        public void GuardarDisco(string path)
+        {
+            var fit = new FileInfo(path);
 
+            path = path.Replace(fit.Extension, ".hdef");
+
+            Serializer.GuardarArchivoBinario<BinaryTreeNode>(path, this);
+        }
     }
 }
