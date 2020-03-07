@@ -34,5 +34,14 @@ namespace HuffmanCompresion.Controllers
                 throw;
             }
         }
+        internal static T DeserializeBinaryFile<T>(string filePath)
+        {
+            BinaryFormatter formatBin = new BinaryFormatter();
+            using (var memoryStream = new MemoryStream(File.ReadAllBytes(filePath)))
+            {
+                memoryStream.Position = 0;
+                return (T)formatBin.Deserialize(memoryStream);
+            }
+        }
     }
 }
