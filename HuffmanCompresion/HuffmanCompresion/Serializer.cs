@@ -5,9 +5,9 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace HuffmanCompresion.Controllers
+namespace HuffmanCompresion
 {
-    internal class Serializer
+    public class Serializer
     {
         internal static void GuardarArchivoBinario<T>(string filePath, T pObject)
         {
